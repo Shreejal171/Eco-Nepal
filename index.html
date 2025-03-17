@@ -3,9 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EcoTourism - Explore Nature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    This is body.
+    <div class="app-container">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="#">
+                        <i class="fas fa-leaf"></i>
+                        <span>EcoNepal</span>
+                    </a>
+                </div>
+                
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link active">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Destinations</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Activities</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Packages</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">About Us</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="user-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="navbar-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <header class="hero-section">
+            <div class="hero-content">
+                <div class="greeting">
+                    <span>Hi, Traveler 👋</span>
+                    <div class="weather">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span>22°C</span>
+                    </div>
+                </div>
+                <div class="destination-label">
+                    <span>NEPAL</span>
+                </div>
+                <h1>Himalayan Serenity</h1>
+                <div class="activity-filters">
+                    <button class="active">Trekking</button>
+                    <button>Boating</button>
+                    <button>Cultural Tours</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="destination-card">
+                <h2>Explore Pokhara</h2>
+                <p>Discover the serene beauty of Pokhara with its lakes, mountains, and vibrant culture.</p>
+                <div class="trip-details">
+                    <div class="detail">
+                        <span class="detail-icon">🗓️</span>
+                        <span class="detail-text">5 days</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-icon">🥾</span>
+                        <span class="detail-text">15 km</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-icon">⭐</span>
+                        <span class="detail-text">9/10</span>
+                    </div>
+                </div>
+                <button class="start-trip">Start Trip</button>
+            </section>
+
+            <section class="popular-destinations">
+                <h2>Top Activities</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://media.istockphoto.com/id/185832760/photo/snow-at-annapurna-base-camp.jpg?s=612x612&w=0&k=20&c=WfPQJrEbqFmmVLEFDkxEBiMBKtOceQaaFhbs_RGbr9k=" alt="Annapurna Trek">
+                        </div>
+                        <div class="card-content">
+                            <h3>Annapurna Base Camp</h3>
+                            <p>7 days | 20 km | 8/10</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://media.istockphoto.com/id/172484462/photo/boats-on-phewa-lake-pokhara-nepal.jpg?s=612x612&w=0&k=20&c=An5st8hleQb-3K4FnwnTMryhgpLNItMNXnAOk0srlp8=" alt="Phewa Lake">
+                        </div>
+                        <div class="card-content">
+                            <h3>Boating on Phewa Lake</h3>
+                            <p>1 day | 5 km | 7/10</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://t4.ftcdn.net/jpg/02/81/40/61/360_F_281406129_JFG2FVJKU0sn6oYg1edeYspi0M53LIgU.jpg" alt="Peace Pagoda">
+                        </div>
+                        <div class="card-content">
+                            <h3>Peace Pagoda Tour</h3>
+                            <p>1 day | 3 km | 8/10</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="accommodation">
+                <h2>Fish Tail Lodge</h2>
+                <div class="accommodation-details">
+                    <div class="accommodation-info">
+                        <p>Pokhara, Nepal</p>
+                        <div class="rating">
+                            <span class="stars">⭐ 8.5/10</span>
+                            <span class="reviews">12 reviews</span>
+                        </div>
+                        <p class="price">$120 / night</p>
+                    </div>
+                </div>
+                <div class="accommodation-image">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Fish Tail Lodge">
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <nav class="footer-nav">
+                <a href="#" class="active">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#">
+                    <span class="nav-icon">🗺️</span>
+                    <span class="nav-text">Map</span>
+                </a>
+                <a href="#">
+                    <span class="nav-icon">📅</span>
+                    <span class="nav-text">Calendar</span>
+                </a>
+                <a href="#">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Profile</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/5cd85856fe.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

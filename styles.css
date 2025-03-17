@@ -1,0 +1,699 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fbf8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e6f2e6, #d7f0d7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-logo i {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-item {
+    margin: 0 1rem;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: #4CAF50;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-btn,
+.user-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.search-btn:hover,
+.user-btn:hover {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #333;
+}
+
+
+/* Header and Hero Section */
+.hero-section {
+    position: relative;
+    color: white;
+    border-radius: 0 0 30px 30px;
+    /* padding: 14rem; */
+    overflow: hidden;
+}
+
+
+.weather{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, rgba(229, 237, 225, 0.23), rgba(160, 255, 162, 0.164)), 
+                url('https://media.istockphoto.com/id/172484462/photo/boats-on-phewa-lake-pokhara-nepal.jpg?s=612x612&w=0&k=20&c=An5st8hleQb-3K4FnwnTMryhgpLNItMNXnAOk0srlp8=') center/cover no-repeat;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14rem;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+}
+
+.weather img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.destination-label {
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.activity-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.activity-filters button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.activity-filters .active,
+.activity-filters button:hover {
+    background: #4CAF50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.destination-card, 
+.popular-destinations, 
+.accommodation {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.trip-details {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-icon {
+    font-size: 1.5rem;
+}
+
+.detail-text {
+    color: #666;
+    font-weight: 500;
+}
+
+.start-trip {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.start-trip:hover {
+    background: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+.popular-destinations .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.2rem;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.accommodation-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.accommodation-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.reviews {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price {
+    font-weight: 600;
+    color: #2e7d32;
+    font-size: 1.1rem;
+}
+
+.accommodation-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.accommodation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background: #fff;
+    padding: 0.5rem;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.footer-nav a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.footer-nav a.active {
+    color: #4CAF50;
+}
+
+.footer-nav a:hover {
+    color: #4CAF50;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.nav-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .app-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        height: 340px;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    main {
+        padding: 1.5rem;
+    }
+    
+    .popular-destinations .cards {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 320px;
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    main {
+        padding: 1.2rem;
+        gap: 1.5rem;
+    }
+    
+    .destination-card, 
+    .popular-destinations, 
+    .accommodation {
+        padding: 1.5rem;
+    }
+    
+    .popular-destinations .cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+    
+    .card-image {
+        height: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 300px;
+    }
+    
+    .hero-content {
+        padding: 1.2rem;
+    }
+    
+    .greeting {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .activity-filters button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    main {
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+    
+    .destination-card, 
+    .popular-destinations, 
+    .accommodation {
+        padding: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .trip-details {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .popular-destinations .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+    
+    .start-trip {
+        width: 100%;
+        padding: 0.7rem;
+    }
+    
+    .accommodation-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .accommodation-image {
+        height: 200px;
+    }
+    
+    .nav-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-section {
+        height: 280px;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .activity-filters {
+        gap: 0.4rem;
+    }
+    
+    .activity-filters button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .detail-icon {
+        font-size: 1.3rem;
+    }
+    
+    .detail-text {
+        font-size: 0.85rem;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .nav-icon {
+        font-size: 1.3rem;
+    }
+    
+    .nav-text {
+        font-size: 0.65rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .navbar-container {
+        padding: 1rem;
+    }
+    
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+    
+    .navbar-menu.active {
+        display: flex;
+    }
+    
+    .navbar-item {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    
+    .navbar-link {
+        display: block;
+        padding: 0.8rem 0;
+    }
+    
+    .navbar-link::after {
+        display: none;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+    
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar-logo a {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-logo i {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-actions {
+        gap: 0.5rem;
+    }
+    
+    .search-btn,
+    .user-btn {
+        font-size: 1rem;
+    }
+}
